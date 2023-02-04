@@ -8,6 +8,8 @@ geographical data.
 
 from .utils import sorted_by_key  # noqa
 from haversine import haversine, Unit
+
+
 def stations_by_distance(stations, p):
     list = []  
     for station in stations:
@@ -16,3 +18,13 @@ def stations_by_distance(stations, p):
         list.append(tuple)
     list = sorted_by_key(list, 2, reverse=False)
     return list
+
+
+def stations_within_radius(stations, centre, r):
+    within = []
+    for station in stations:
+        dist = haversine(centre, station.coord)
+        if dist <= r:
+            within.append(station.name)
+    within_sorted = sorted(within)
+    return within_sorted
