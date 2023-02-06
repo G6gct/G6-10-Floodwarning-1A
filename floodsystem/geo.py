@@ -47,6 +47,7 @@ def stations_by_river(stations):
         d[river] = sorted(station_names)
     return d
 
+
 def rivers_by_station_number(stations, N):
     dictionary = stations_by_river(stations)
     for river in stations_by_river(stations):
@@ -54,7 +55,6 @@ def rivers_by_station_number(stations, N):
     tuple = list(dictionary.items())
     tuple.sort(key= lambda x:x[1], reverse=True)
     output = tuple[0:N]
-
     
     while tuple[N-1][1] == tuple[N][1]:
         output.append(tuple[N])
