@@ -3,8 +3,10 @@ from floodsystem.stationdata import build_station_list
 
 stations = build_station_list()
 def test_rivers_by_station_number():
-    list = rivers_by_station_number(stations, 9)
-    assert len(list) >= 9
+    list = rivers_by_station_number(stations, 30)
+    assert len(list) >= 30
+
+
 
 
 
