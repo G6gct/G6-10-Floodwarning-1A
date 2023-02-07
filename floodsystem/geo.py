@@ -34,7 +34,8 @@ def rivers_with_station(stations):
     rivers = []
     for station in stations:
         rivers.append(station.river)
-    return rivers
+    rivers_sorted = sorted(rivers)
+    return rivers_sorted
 
 
 def stations_by_river(stations):
