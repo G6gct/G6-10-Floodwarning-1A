@@ -1,8 +1,8 @@
-import datafetcher as df
-import matplotlib.pyplot as plt
-import datetime
-import numpy as np
+from matplotlib import pyplot as plt
 from matplotlib import dates as dat
+import numpy as np
+from floodsystem.analysis import polyfit
+from .station import MonitoringStation
 
 def plot_water_levels(stations, dt):
 
