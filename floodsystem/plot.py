@@ -1,7 +1,8 @@
-import floodsystem.datafetcher as df
+import datafetcher as df
 import matplotlib.pyplot as plt
 import datetime
-
+import numpy as np
+from matplotlib import dates as dat
 
 def plot_water_levels(stations, dt):
 
@@ -26,5 +27,31 @@ def plot_water_levels(stations, dt):
 
         plt.show()
 
+def plot_water_level_with_fit(station, dates, levels, p):
+    "plot the best-fit polynomial of p degrees for one station's water level vs. date graph"
+    plt.plot(dates, levels, '.')
 
+    poly = polyfit(dates, levels, p)
 
+    # Plot polynomial fit at 50 points along interval
+    ndate = dat.date2num(dates)
+    shift = np.linspace(ndate[0], ndate[-1], 50)
+    plt.plot(shift, poly(shift - shift[0]))
+    funct = list(poly(shift - shift[0]))
+    ymax = max(poly(shift - shift[0]))
+    xpos = funct.index(ymax)
+    xmax = shift[xpos]
+    plt.annotate('max={}'.format(ymax), xy=(xmax, ymax), xytext=(xmax, ymax),
+        arrowprops=dict(facecolor='black', shrink=0.01),
+        )
+    ymin = min(poly(shift - shift[0]))
+    xpos1 = funct.index(ymin)
+    xmin = shift[xpos1]
+    plt.annotate('min={}'.format(ymin), xy=(xmin, ymin), xytext=(xmin, ymin),
+        arrowprops=dict(facecolor='black', shrink=0.01),
+        )
+    
+    plt.title(label='Best-fit polynomial for {}'.format(station))
+
+    # Display plot
+    plt.show()
