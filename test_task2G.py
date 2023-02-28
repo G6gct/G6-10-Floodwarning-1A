@@ -11,14 +11,14 @@ def stations_highest_rel_level(stations, N):
 	return sorted(output_list, key=lambda x: x[1], reverse=True)[:N]
 
 
-def run():
-    """Requirements for Task 2G"""
-    # Create station list
-    stations = build_station_list()
-    update_water_levels(stations)
 
-    # Reduce the number of stations in the list for demonstration convenience
-    demo_stations_tuplelist = stations_highest_rel_level(stations, 10)
+"""Requirements for Task 2G"""
+# Create station list
+stations = build_station_list()
+update_water_levels(stations)
+
+# Reduce the number of stations in the list for demonstration convenience
+demo_stations = stations_highest_rel_level(stations, 10)
 
 def test_2f():
-      assert len(demo_stations_tuplelist) == 10
+      assert len(demo_stations) == 10
