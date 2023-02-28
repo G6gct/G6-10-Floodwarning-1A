@@ -1,5 +1,5 @@
-from .utils import sorted_by_key
-from .stationdata import build_station_list
+from floodsystem.utils import sorted_by_key
+from floodsystem.stationdata import build_station_list
 from floodsystem.plot import plot_water_level_with_fit
 from floodsystem.datafetcher import fetch_latest_water_level_data
 from floodsystem.datafetcher import fetch_measure_levels
@@ -23,9 +23,9 @@ def stations_highest_rel_level(stations, N):
         output_final.append(n[0])
     return output_final[:N]
 
-#Define a function that finds the top x stations in terms of the water level
+#Define a function that finds the top x stations with highest water level
 def top_water_level(x):
-    "Search for the  top x stations with highest water level"
+    "Searching for the  top x stations with highest water level"
     data = fetch_latest_water_level_data()
     items = data['items']
     rank = []
