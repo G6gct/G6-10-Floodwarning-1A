@@ -33,7 +33,7 @@ def floodwarning(stations):
     stations_with_risk_factor_sorted = sorted(stations_with_risk_factor, key=lambda x: x[1], reverse=True)
 
     # Categorize data
-    severe_list = [station_tuple for station_tuple in stations_with_risk_factor_sorted if station_tuple[1] >= 1.2]
+    severe_list = [station_tuple for station_tuple in stations_with_risk_factor_sorted if station_tuple[1] >= 1.25]
     high_list = [station_tuple for station_tuple in stations_with_risk_factor_sorted if station_tuple[1] >= 0.8 and station_tuple[1] < 1.2]
     moderate_list = [station_tuple for station_tuple in stations_with_risk_factor_sorted if station_tuple[1] >= 0.5 and station_tuple[1] < 0.8]
     low_list = [station_tuple for station_tuple in stations_with_risk_factor_sorted if station_tuple[1] < 0.5]
