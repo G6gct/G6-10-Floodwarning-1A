@@ -1,5 +1,5 @@
-from .utils import sorted_by_key
-from .stationdata import build_station_list
+from floodsystem.utils import sorted_by_key
+from floodsystem.stationdata import build_station_list
 from floodsystem.plot import plot_water_level_with_fit
 from floodsystem.datafetcher import fetch_latest_water_level_data
 from floodsystem.datafetcher import fetch_measure_levels

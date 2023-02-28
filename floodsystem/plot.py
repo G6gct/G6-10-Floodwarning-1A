@@ -42,16 +42,16 @@ def plot_water_level_with_fit(station, dates, levels, p):
     xpos = funct.index(ymax)
     xmax = shift[xpos]
     plt.annotate('max={}'.format(ymax), xy=(xmax, ymax), xytext=(xmax, ymax),
-        arrowprops=dict(facecolor='black', shrink=0.01),
+        arrowprops=dict(facecolor='red', shrink=0.01),
         )
     ymin = min(poly(shift - shift[0]))
     xpos1 = funct.index(ymin)
     xmin = shift[xpos1]
     plt.annotate('min={}'.format(ymin), xy=(xmin, ymin), xytext=(xmin, ymin),
-        arrowprops=dict(facecolor='black', shrink=0.01),
+        arrowprops=dict(facecolor='green', shrink=0.01),
         )
     
-    plt.title(label='Best-fit polynomial for {}'.format(station))
+    plt.title(label='Best-fit polynomial for the required station')
 
     # Display plot
     plt.show()
