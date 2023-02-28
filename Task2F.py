@@ -39,4 +39,3 @@ for i in allstations:
     time = fetch[0]
     level = fetch[1]
     plot_water_level_with_fit(label, time, level, 4)
-
