@@ -25,29 +25,65 @@ def run():
 
     # Print output
     print('')
-    print('Stations with severe flood risk: ')
+    print('Towns with severe flood risk: ')
     if len(severe_list) == 0:
         print('There is no place with severe flood risk')
         print('')
-        print('Stations with high flood risk: ')
-        for station_tuple in high_list:
-            station = station_tuple[0]
-            risk_factor = station_tuple[1]
-            print('')
-            print('Station name:', station.name)
-            print('Risk factor:', risk_factor)
-            print('Latest relative water level:', station.relative_water_level())
-
+        
     else: 
         for station_tuple in severe_list:
             station = station_tuple[0]
             risk_factor = station_tuple[1]
             print('')
-            print('Station name:', station.name)
+            print('Station name:', station.town)
             print('Risk factor:', risk_factor)
             print('Latest relative water level:', station.relative_water_level())
 
-
+    print ('')
+    print('')
+    print('Towns with high flood risk: ')
+    if len(high_list) == 0:
+        print('There is no place with high flood risk')
+        print('')
+    
+    else:
+        for station_tuple in high_list:
+            station = station_tuple[0]
+            risk_factor = station_tuple[1]
+            print('')
+            print('Station name:', station.town)
+            print('Risk factor:', risk_factor)
+            print('Latest relative water level:', station.relative_water_level())
+    print ('')
+    print('')
+    print('Towns with moderate flood risk: ')
+    if len(moderate_list) == 0:
+        print('There is no place with moderate flood risk')
+        print('')
+    
+    else:
+        for station_tuple in moderate_list:
+            station = station_tuple[0]
+            risk_factor = station_tuple[1]
+            print('')
+            print('Station name:', station.town)
+            print('Risk factor:', risk_factor)
+            print('Latest relative water level:', station.relative_water_level())
+    print ('')
+    print('')
+    print('Towns with low flood risk: ')
+    if len(low_list) == 0:
+        print('There is no place with low flood risk')
+        print('')
+    
+    else:
+        for station_tuple in low_list:
+            station = station_tuple[0]
+            risk_factor = station_tuple[1]
+            print('')
+            print('Station name:', station.town)
+            print('Risk factor:', risk_factor)
+            print('Latest relative water level:', station.relative_water_level())
 if __name__ == "__main__":
     print("*** Task 2G: CUED Part IA Flood Warning System ***")
     run()
