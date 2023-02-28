@@ -13,4 +13,5 @@ def test_stations_level_over_threshold():
         else:
             None
     print(counter, len(list))
+    
     assert counter == len(list)
