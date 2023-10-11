@@ -3,6 +3,10 @@ from matplotlib import dates as dat
 import numpy as np
 from floodsystem.analysis import polyfit
 from .station import MonitoringStation
+import datetime
+import floodsystem.datafetcher as df
+import matplotlib.pyplot as plt
+
 
 def plot_water_levels(stations, dt):
 
@@ -51,7 +55,7 @@ def plot_water_level_with_fit(station, dates, levels, p):
         arrowprops=dict(facecolor='green', shrink=0.01),
         )
     
-    plt.title(label='Best-fit polynomial for the required station')
+    plt.title(label='Best-fit polynomial for {}'.format(station))
 
     # Display plot
     plt.show()

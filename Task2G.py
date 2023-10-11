@@ -29,29 +29,12 @@ def run():
     if len(severe_list) == 0:
         print('There is no place with severe flood risk')
         print('')
-        
-    else: 
-        for station_tuple in severe_list:
-            station = station_tuple[0]
-            risk_factor = station_tuple[1]
-            print('')
-            print('Station name:', station.town)
-            print('Risk factor:', risk_factor)
-            print('Latest relative water level:', station.relative_water_level())
-
-    print ('')
-    print('')
-    print('Towns with high flood risk: ')
-    if len(high_list) == 0:
-        print('There is no place with high flood risk')
-        print('')
-    
-    else:
+        print('Stations with high flood risk: ')
         for station_tuple in high_list:
             station = station_tuple[0]
             risk_factor = station_tuple[1]
             print('')
-            print('Station name:', station.town)
+            print('Station name:', station.name)
             print('Risk factor:', risk_factor)
             print('Latest relative water level:', station.relative_water_level())
     print ('')
@@ -66,7 +49,7 @@ def run():
             station = station_tuple[0]
             risk_factor = station_tuple[1]
             print('')
-            print('Station name:', station.town)
+            print('Station name:', station.name)
             print('Risk factor:', risk_factor)
             print('Latest relative water level:', station.relative_water_level())
     print ('')
